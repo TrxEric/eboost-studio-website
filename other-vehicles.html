@@ -42,7 +42,7 @@
         </p>
         <div class="hero-actions">
           <a class="button primary" href="tesla-quote.html" data-track="click_book_now">填寫施工需求</a>
-          <a class="button secondary" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" data-track="click_line">LINE 諮詢</a>
+          <a class="button secondary" href="#" data-site-link="line" data-track="click_line">LINE 諮詢</a>
         </div>
       </section>
 
@@ -131,7 +131,7 @@
         <p>無論是新車防護、外觀升級、底盤、內裝或保養，我們會先協助你整理施工順序與預算方向。</p>
         <div class="hero-actions">
           <a class="button primary" href="tesla-quote.html" data-track="click_book_now">填寫施工需求</a>
-          <a class="button secondary" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" data-track="click_line">LINE 諮詢</a>
+          <a class="button secondary" href="#" data-site-link="line" data-track="click_line">LINE 諮詢</a>
         </div>
       </section>
     </main>
@@ -139,8 +139,8 @@
     <footer class="site-footer">
       <div>
         <p>© 2026 E Boost Studio 艾佳車藝</p>
-        <p>台中新車防護與整車升級中心</p>
-        <p class="site-version">版本 v2026.07.20-r3</p>
+        <p data-site-text="positioning">台中新車防護與整車升級中心</p>
+        <p class="site-version" data-site-text="version" data-site-prefix="版本 ">版本</p>
         <nav class="footer-social" aria-label="次要服務">
           <a href="index.html">回首頁</a>
           <a href="wrap-simulator.html">顏色模擬器</a>
@@ -148,19 +148,21 @@
         </nav>
       </div>
       <address class="footer-contact">
-        <span>台中市大肚區南榮路387號</span>
-        <a href="tel:04-23595850" data-track="click_phone">04-23595850</a>
+        <span data-site-text="address">地址</span>
+        <a href="#" data-site-link="phone" data-site-text="phone" data-track="click_phone">電話</a>
       </address>
     </footer>
 
     <nav class="mobile-cta-bar" aria-label="手機快速聯絡">
-      <a href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" data-track="click_line">LINE 諮詢</a>
+      <a href="#" data-site-link="line" data-track="click_line">LINE 諮詢</a>
       <a href="tesla-quote.html" data-track="click_book_now">立即預約</a>
-      <a href="tel:04-23595850" data-track="click_phone">電話聯絡</a>
+      <a href="#" data-site-link="phone" data-track="click_phone">電話聯絡</a>
     </nav>
-    <a class="floating-line" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" aria-label="LINE 聯絡 E Boost Studio" data-track="click_line">LINE</a>
+    <a class="floating-line" href="#" data-site-link="line" aria-label="LINE 聯絡 E Boost Studio" data-track="click_line">LINE</a>
 
-    <script src="data/analytics-config.js?v=20260720-version-counter"></script>
-    <script src="tracking.js?v=20260720-version-counter"></script>
+    <script src="data/site-config.js?v=20260720-shared-data"></script>
+    <script src="data/analytics-config.js?v=20260720-shared-data"></script>
+    <script src="tracking.js?v=20260720-shared-data"></script>
+    <script src="shared-site.js?v=20260720-shared-data"></script>
   </body>
 </html>

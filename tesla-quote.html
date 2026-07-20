@@ -25,7 +25,7 @@
         <a href="index.html#pickup" data-track="view_pickup_service">接送車服務</a>
         <a href="index.html#about">關於艾佳</a>
       </nav>
-      <a class="nav-cta" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" data-track="click_line">LINE 諮詢</a>
+      <a class="nav-cta" href="#" data-site-link="line" data-track="click_line">LINE 諮詢</a>
     </header>
 
     <main>
@@ -68,8 +68,8 @@
           <h2>感謝你的詢問</h2>
           <p>我們會依照車型、交車日期及預算提供適合的施工方案。若想更快確認檔期，可以直接加入 LINE 或電話聯絡。</p>
           <div class="hero-actions">
-            <a class="button primary" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" data-track="click_line">加入 LINE</a>
-            <a class="button secondary" href="tel:04-23595850" data-track="click_phone">電話聯絡</a>
+            <a class="button primary" href="#" data-site-link="line" data-track="click_line">加入 LINE</a>
+            <a class="button secondary" href="#" data-site-link="phone" data-track="click_phone">電話聯絡</a>
             <a class="button secondary" href="index.html#tesla-plans">返回 Tesla 方案頁面</a>
           </div>
         </div>
@@ -77,26 +77,28 @@
     </main>
 
     <nav class="mobile-cta-bar" aria-label="手機快速聯絡">
-      <a href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" data-track="click_line">LINE 諮詢</a>
+      <a href="#" data-site-link="line" data-track="click_line">LINE 諮詢</a>
       <a href="tesla-quote.html" data-track="click_book_now">立即預約</a>
-      <a href="tel:04-23595850" data-track="click_phone">電話聯絡</a>
+      <a href="#" data-site-link="phone" data-track="click_phone">電話聯絡</a>
     </nav>
 
     <footer class="site-footer">
       <div>
         <p>© 2026 E Boost Studio 艾佳車藝</p>
-        <p>台中新車防護與整車升級中心</p>
-        <p class="site-version">版本 v2026.07.20-r3</p>
+        <p data-site-text="positioning">台中新車防護與整車升級中心</p>
+        <p class="site-version" data-site-text="version" data-site-prefix="版本 ">版本</p>
       </div>
       <address class="footer-contact">
-        <span>台中市大肚區南榮路387號</span>
-        <a href="tel:04-23595850" data-track="click_phone">04-23595850</a>
+        <span data-site-text="address">地址</span>
+        <a href="#" data-site-link="phone" data-site-text="phone" data-track="click_phone">電話</a>
       </address>
     </footer>
 
-    <script src="data/tesla-site-data.js?v=20260720-version-counter"></script>
-    <script src="data/analytics-config.js?v=20260720-version-counter"></script>
-    <script src="tracking.js?v=20260720-version-counter"></script>
-    <script src="tesla-quote.js?v=20260720-version-counter"></script>
+    <script src="data/site-config.js?v=20260720-shared-data"></script>
+    <script src="data/tesla-site-data.js?v=20260720-shared-data"></script>
+    <script src="data/analytics-config.js?v=20260720-shared-data"></script>
+    <script src="tracking.js?v=20260720-shared-data"></script>
+    <script src="shared-site.js?v=20260720-shared-data"></script>
+    <script src="tesla-quote.js?v=20260720-shared-data"></script>
   </body>
 </html>

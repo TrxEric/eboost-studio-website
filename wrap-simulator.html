@@ -20,7 +20,7 @@
         <a href="wrap-simulator.html" aria-current="page">顏色模擬器</a>
         <a href="index.html#contact">聯絡我們</a>
       </nav>
-      <a class="nav-cta" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer">LINE 諮詢</a>
+      <a class="nav-cta" href="#" data-site-link="line">LINE 諮詢</a>
     </header>
 
     <main>
@@ -122,22 +122,24 @@
       </section>
     </main>
 
-    <a class="floating-line" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" aria-label="LINE 聯絡 E Boost Studio">LINE</a>
+    <a class="floating-line" href="#" data-site-link="line" aria-label="LINE 聯絡 E Boost Studio">LINE</a>
     <footer class="site-footer">
       <div>
         <p>© 2026 E Boost Studio 艾佳車藝</p>
-        <p>台中新車防護與整車升級中心</p>
-        <p class="site-version">版本 v2026.07.20-r3</p>
+        <p data-site-text="positioning">台中新車防護與整車升級中心</p>
+        <p class="site-version" data-site-text="version" data-site-prefix="版本 ">版本</p>
       </div>
       <address class="footer-contact">
-        <span>台中市大肚區南榮路387號</span>
-        <a href="tel:04-23595850">04-23595850</a>
+        <span data-site-text="address">地址</span>
+        <a href="#" data-site-link="phone" data-site-text="phone">電話</a>
       </address>
     </footer>
     <script src="data/wrap-colors.js?v=20260720-phase1"></script>
     <script src="data/ai-config.js?v=20260720-ai-commercial"></script>
-    <script src="data/analytics-config.js?v=20260720-version-counter"></script>
-    <script src="tracking.js?v=20260720-version-counter"></script>
-    <script src="wrap-simulator.js?v=20260720-version-counter"></script>
+    <script src="data/site-config.js?v=20260720-shared-data"></script>
+    <script src="data/analytics-config.js?v=20260720-shared-data"></script>
+    <script src="tracking.js?v=20260720-shared-data"></script>
+    <script src="shared-site.js?v=20260720-shared-data"></script>
+    <script src="wrap-simulator.js?v=20260720-shared-data"></script>
   </body>
 </html>

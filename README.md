@@ -9,8 +9,10 @@ E Boost Studio 艾佳車藝官方網站，採用純靜態 HTML、CSS、JavaScrip
 - `tesla-quote.js`：詢價頁欄位、送出流程與 Google 表單串接
 - `other-vehicles.html`：其他車款施工與整車升級頁
 - `tracking.js`：LINE、電話、預約與表單事件追蹤
-- `data/analytics-config.js`：網站版本號與 Cloudflare Web Analytics token 設定
-- `data/tesla-site-data.js`：Tesla 方案、FAQ、表單選項與品牌資料
+- `shared-site.js`：把公司共用資料自動套用到各頁
+- `data/site-config.js`：公司基本資料、版本號與主要維護準則
+- `data/analytics-config.js`：Cloudflare Web Analytics token 設定
+- `data/tesla-site-data.js`：Tesla 方案、FAQ 與表單選項
 - `styles.css`：全站共用樣式
 - `wrap-simulator.html`：車身貼膜顏色模擬器
 - `wrap-simulator.css`：模擬器專用樣式
@@ -30,6 +32,42 @@ wrap-simulator.html
 ```
 
 若要測試網站連結路徑，也可以用本機靜態伺服器開啟專案資料夾。
+
+## 共用資料維護規則
+
+公司基本資料只改這一個檔案：
+
+```text
+data/site-config.js
+```
+
+目前集中管理：
+
+- 公司名稱
+- 品牌定位
+- 地址
+- 電話
+- LINE
+- Facebook
+- Instagram
+- TikTok
+- 網站版本號
+- 主要維護準則
+
+HTML 頁面不要再手動寫電話、LINE、地址與版本號。需要顯示文字時使用：
+
+```html
+<span data-site-text="address"></span>
+```
+
+需要連結時使用：
+
+```html
+<a href="#" data-site-link="phone">電話聯絡</a>
+<a href="#" data-site-link="line">LINE 諮詢</a>
+```
+
+`shared-site.js` 會自動把資料套上去。
 
 ## 部署
 
