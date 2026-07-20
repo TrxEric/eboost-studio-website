@@ -284,20 +284,26 @@
             </div>
           </div>
         </div>
-        <form class="contact-form" id="leadForm">
-          <p class="form-note">填寫後會整理成一段需求內容，方便你直接傳給我們確認預約。</p>
+        <form
+          class="contact-form"
+          id="leadForm"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSfZxx1X7Rmlh3PdwFJ1lSG7AkcItTSLM_95immAk_moAoJz2w/formResponse"
+          method="POST"
+          target="googleFormFrame"
+        >
+          <p class="form-note">填寫送出後，我們會在 Google 表單收到你的需求內容。</p>
           <label>
             姓名
-            <input type="text" name="name" placeholder="請輸入姓名" required />
+            <input type="text" name="entry.2096154645" placeholder="請輸入姓名" required />
           </label>
           <label>
             聯絡方式
-            <input type="text" name="contact" placeholder="電話 / LINE / Email" required />
+            <input type="text" name="entry.483048131" placeholder="電話 / LINE / Email" required />
           </label>
           <label>
             需求項目
-            <select name="service">
-              <option>汽車貼膜</option>
+            <select name="entry.658611731">
+              <option value="貼膜">汽車貼膜</option>
               <option>鍍膜</option>
               <option>隔熱紙</option>
               <option>改裝 / 保養</option>
@@ -307,19 +313,16 @@
           </label>
           <label>
             補充說明
-            <textarea name="message" rows="4" placeholder="車款、年份、想處理的部位或應徵職缺"></textarea>
+            <textarea name="entry.1448401652" rows="4" placeholder="車款、年份、想處理的部位或應徵職缺"></textarea>
           </label>
-          <button class="button primary" type="submit">整理需求內容</button>
+          <button class="button primary" type="submit" id="submitLead">送出需求</button>
           <div class="lead-result" id="leadResult" hidden>
-            <strong>需求內容已整理完成</strong>
-            <p>請複製下方內容，透過 Facebook、Instagram、TikTok 或電話傳給我們。</p>
-            <textarea id="leadMessage" rows="7" readonly></textarea>
-            <div class="lead-actions">
-              <button class="button primary" type="button" id="copyLead">複製需求內容</button>
-              <a class="button secondary" href="tel:04-26395850">直接撥打</a>
-            </div>
+            <strong>需求已送出</strong>
+            <p>我們已收到你的需求內容，會再依照你留下的聯絡方式與你確認細節。</p>
+            <a class="button secondary" href="tel:04-26395850">需要更快回覆，直接撥打</a>
           </div>
         </form>
+        <iframe class="google-form-frame" name="googleFormFrame" title="Google 表單送出狀態"></iframe>
       </section>
     </main>
 
@@ -342,44 +345,17 @@
     <script>
       const leadForm = document.querySelector("#leadForm");
       const leadResult = document.querySelector("#leadResult");
-      const leadMessage = document.querySelector("#leadMessage");
-      const copyLead = document.querySelector("#copyLead");
+      const submitLead = document.querySelector("#submitLead");
 
       if (leadForm) {
         leadForm.addEventListener("submit", (event) => {
-          event.preventDefault();
-          const formData = new FormData(leadForm);
-          const name = formData.get("name")?.toString().trim() || "未填寫";
-          const contact = formData.get("contact")?.toString().trim() || "未填寫";
-          const service = formData.get("service")?.toString().trim() || "未選擇";
-          const message = formData.get("message")?.toString().trim() || "未填寫";
-
-          leadMessage.value = [
-            "您好，我想諮詢 E Boost Studio 艾佳車藝服務：",
-            "",
-            `姓名：${name}`,
-            `聯絡方式：${contact}`,
-            `需求項目：${service}`,
-            `補充說明：${message}`,
-          ].join("\n");
-
-          leadResult.hidden = false;
-          leadResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        });
-
-        copyLead?.addEventListener("click", async () => {
-          leadMessage.select();
-          try {
-            await navigator.clipboard.writeText(leadMessage.value);
-            copyLead.textContent = "已複製";
-          } catch {
-            document.execCommand("copy");
-            copyLead.textContent = "已複製";
-          }
-
+          submitLead.textContent = "送出中...";
           window.setTimeout(() => {
-            copyLead.textContent = "複製需求內容";
-          }, 1800);
+            leadResult.hidden = false;
+            submitLead.textContent = "已送出";
+            leadForm.reset();
+            leadResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }, 700);
         });
       }
     </script>
