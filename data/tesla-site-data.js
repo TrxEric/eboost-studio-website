@@ -3,7 +3,7 @@ window.EBOOST_SITE = {
     name: "E Boost Studio 艾佳車藝",
     positioning: "台中 Tesla 新車防護與整車升級中心",
     address: "台中市大肚區南榮路387號",
-    phone: "04-26395850",
+    phone: "04-23595850",
     lineUrl: "https://lin.ee/sUGMmXs",
     facebook: "https://www.facebook.com/E.Boost.Studio/",
     instagram: "https://www.instagram.com/e.boost_studio",
