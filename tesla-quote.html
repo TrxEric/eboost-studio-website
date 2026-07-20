@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tesla 新車防護詢價表｜E Boost Studio 艾佳車藝</title>
+    <meta name="description" content="填寫 Tesla 車型、交車日期、施工項目與預算，E Boost Studio 艾佳車藝將提供 Model 3、Model Y 新車防護建議。" />
+    <link rel="canonical" href="https://ebooststudio.com/tesla-quote.html" />
+    <meta property="og:title" content="Tesla 新車防護詢價表｜E Boost Studio 艾佳車藝" />
+    <meta property="og:description" content="告訴我們車型、交車日期與預算，取得 Tesla PPF、隔熱紙與改色施工建議。" />
+    <meta property="og:image" content="https://ebooststudio.com/assets/site-photos/hero-orange-tesla.jpg" />
+    <link rel="stylesheet" href="styles.css?v=20260720-nav-photo-fix" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html#home" aria-label="E Boost Studio 艾佳車藝首頁">
+        <img class="brand-logo" src="assets/eb-logo.jpg" alt="E Boost Studio Logo" width="900" height="160" />
+        <span class="brand-subtitle">艾佳車藝</span>
+      </a>
+      <nav class="site-nav" aria-label="主要導覽">
+        <a href="index.html#tesla-plans">新車方案</a>
+        <a href="index.html#ppf">服務項目</a>
+        <a href="index.html#cases" data-track="view_cases">施工案例</a>
+        <a href="other-vehicles.html">其他車款</a>
+        <a href="index.html#pickup" data-track="view_pickup_service">接送車服務</a>
+        <a href="index.html#about">關於艾佳</a>
+      </nav>
+      <a class="nav-cta" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" data-track="click_line">LINE 諮詢</a>
+    </header>
+
+    <main>
+      <section class="section quote-hero">
+        <p class="eyebrow">Tesla Quote</p>
+        <h1>Tesla 新車防護詢價表</h1>
+        <p>填寫車型、交車日期與預算方向，我們會依照你的使用情境提供基礎、迎風面或全車防護建議。</p>
+      </section>
+
+      <section class="section quote-section">
+        <form class="tesla-quote-form" id="teslaQuoteForm" data-track-form-start>
+          <input class="hp-field" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-grid">
+            <label>姓名<input name="name" type="text" required autocomplete="name" /></label>
+            <label>電話<input name="phone" type="tel" required autocomplete="tel" /></label>
+            <label>LINE ID<input name="lineId" type="text" placeholder="可填 LINE ID 或留空" /></label>
+            <label>車型<select name="model" id="modelSelect" required></select></label>
+            <label>車輛年份<input name="year" type="text" placeholder="例如 2026" /></label>
+            <label>車身顏色<input name="color" type="text" placeholder="例如 珍珠白 / 黑 / 灰" /></label>
+            <label>是否已交車<select name="deliveryStatus" id="deliveryStatusSelect" required></select></label>
+            <label>預計交車日期<input name="deliveryDate" type="date" /></label>
+            <label>所在區域<input name="area" type="text" placeholder="例如 台中西屯 / 彰化市" /></label>
+            <label>預算區間<select name="budget" id="budgetSelect"></select></label>
+            <label>是否需要接送車<select name="pickup" id="pickupSelect"></select></label>
+          </div>
+
+          <fieldset>
+            <legend>希望施工項目</legend>
+            <div class="checkbox-grid" id="serviceCheckboxes"></div>
+          </fieldset>
+
+          <label>備註<textarea name="note" rows="5" placeholder="可補充交車時間、想保護的部位、是否常跑高速、是否想改色等"></textarea></label>
+
+          <button class="button primary" type="submit" id="quoteSubmit">送出 Tesla 施工詢問</button>
+          <p class="form-note">送出後會整理成詢問內容，方便我們確認車型、施工項目與預約方向。</p>
+        </form>
+
+        <div class="quote-success" id="quoteSuccess" hidden>
+          <p class="eyebrow">Submitted</p>
+          <h2>感謝你的詢問</h2>
+          <p>我們會依照車型、交車日期及預算提供適合的施工方案。若想更快確認檔期，可以直接加入 LINE 或電話聯絡。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" data-track="click_line">加入 LINE</a>
+            <a class="button secondary" href="tel:04-26395850" data-track="click_phone">電話聯絡</a>
+            <a class="button secondary" href="index.html#tesla-plans">返回 Tesla 方案頁面</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-cta-bar" aria-label="手機快速聯絡">
+      <a href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" data-track="click_line">LINE 諮詢</a>
+      <a href="tesla-quote.html" data-track="click_book_now">立即預約</a>
+      <a href="tel:04-26395850" data-track="click_phone">電話聯絡</a>
+    </nav>
+
+    <footer class="site-footer">
+      <div>
+        <p>© 2026 E Boost Studio 艾佳車藝</p>
+        <p>台中新車防護與整車升級中心</p>
+        <p class="site-version">版本 v2026.07.20-r3</p>
+      </div>
+      <address class="footer-contact">
+        <span>台中市大肚區南榮路387號</span>
+        <a href="tel:04-26395850" data-track="click_phone">04-26395850</a>
+      </address>
+    </footer>
+
+    <script src="data/tesla-site-data.js?v=20260720-version-counter"></script>
+    <script src="data/analytics-config.js?v=20260720-version-counter"></script>
+    <script src="tracking.js?v=20260720-version-counter"></script>
+    <script src="tesla-quote.js?v=20260720-version-counter"></script>
+  </body>
+</html>

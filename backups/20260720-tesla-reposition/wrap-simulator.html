@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>車身貼膜顏色模擬器｜E Boost Studio 艾佳車藝</title>
+    <link rel="stylesheet" href="styles.css?v=20260720-wrap-entry" />
+    <link rel="stylesheet" href="wrap-simulator.css?v=20260720-phase1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html#home" aria-label="E Boost Studio 艾佳車藝首頁">
+        <img class="brand-logo" src="assets/eb-logo.jpg" alt="E Boost Studio Logo" />
+        <span class="brand-subtitle">艾佳車藝</span>
+      </a>
+      <nav class="site-nav" aria-label="主要導覽">
+        <a href="index.html#about">關於我們</a>
+        <a href="index.html#services">服務項目</a>
+        <a href="index.html#works">作品展示</a>
+        <a href="wrap-simulator.html" aria-current="page">顏色模擬器</a>
+        <a href="index.html#contact">聯絡我們</a>
+      </nav>
+      <a class="nav-cta" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer">LINE 諮詢</a>
+    </header>
+
+    <main>
+      <section class="wrap-hero section">
+        <div class="wrap-hero-copy">
+          <p class="eyebrow">Wrap Color Simulator</p>
+          <h1>車身貼膜顏色模擬器</h1>
+          <p>
+            上傳你的車輛照片，先用色卡快速預覽不同貼膜風格。第一階段為前端示範版，可保留車身光影並支援下載預覽圖。
+          </p>
+        </div>
+        <div class="wrap-status" id="wrapStatus" role="status" aria-live="polite">
+          <span>等待上傳照片</span>
+          <div class="progress-track" aria-hidden="true">
+            <span id="progressBar"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap-tool section" aria-label="車身貼膜顏色模擬器工具">
+        <div class="wrap-workspace">
+          <div class="upload-card" id="dropzone">
+            <input id="carUpload" type="file" accept="image/jpeg,image/jpg,image/png,image/webp" />
+            <div class="upload-card-copy">
+              <strong>上傳車輛照片</strong>
+              <span>支援 JPG、JPEG、PNG、WEBP，建議單張 12MB 以內。</span>
+              <span>手機可直接拍照上傳，也可以把圖片拖曳到這裡。</span>
+            </div>
+            <button class="button primary" type="button" id="chooseImage">選擇照片</button>
+          </div>
+
+          <div class="canvas-panel">
+            <div class="canvas-toolbar">
+              <div>
+                <strong id="previewTitle">尚未選擇照片</strong>
+                <span id="previewHint">上傳後可點選車身烤漆區域，微調模擬遮罩。</span>
+              </div>
+              <div class="toolbar-actions" aria-label="模擬器操作">
+                <button class="button secondary is-active" type="button" id="showSimulated">模擬圖</button>
+                <button class="button secondary" type="button" id="showOriginal">原圖</button>
+              </div>
+            </div>
+            <div class="canvas-stage" id="canvasStage">
+              <canvas id="wrapCanvas" aria-label="車身貼膜顏色模擬畫布"></canvas>
+              <div class="empty-preview" id="emptyPreview">
+                <strong>圖片預覽區</strong>
+                <span>上傳車輛照片後，這裡會顯示原圖與模擬效果。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="wrap-controls" aria-label="貼膜顏色與輸出設定">
+          <div class="control-panel">
+            <div class="control-heading">
+              <p class="eyebrow">Color Card</p>
+              <h2>貼膜色卡</h2>
+            </div>
+            <div class="swatch-grid" id="swatchGrid"></div>
+            <div class="selected-color-card" id="selectedColorCard"></div>
+          </div>
+
+          <div class="control-panel">
+            <div class="control-heading">
+              <p class="eyebrow">Mask</p>
+              <h2>車身區域</h2>
+            </div>
+            <p class="panel-note">
+              第一階段使用前端取樣遮罩。點選照片上的車身烤漆位置，可以重新建立可變色範圍。
+            </p>
+            <label class="range-control">
+              遮罩範圍
+              <input id="maskRange" type="range" min="18" max="90" value="48" />
+            </label>
+          </div>
+
+          <div class="control-panel ai-panel">
+            <div class="control-heading">
+              <p class="eyebrow">AI Refine</p>
+              <h2>AI 精修合成</h2>
+            </div>
+            <p class="panel-note">
+              商業版會把目前照片、車身遮罩與選定膜色送到後端 AI 進行材質重繪。API key 會放在 Cloudflare Worker，不會放在網站前端。
+            </p>
+            <button class="button primary" type="button" id="aiRefine" disabled>AI 精修目前效果</button>
+            <div class="ai-message" id="aiMessage" role="status" aria-live="polite">
+              先上傳照片並選擇膜色後，可進行 AI 精修。
+            </div>
+          </div>
+
+          <div class="simulator-actions">
+            <button class="button secondary" type="button" id="resetUpload">重新上傳</button>
+            <button class="button primary" type="button" id="downloadPreview" disabled>下載圖片</button>
+          </div>
+          <p class="panel-note">
+            模擬效果會受拍攝光線、原車色與反射影響，實際膜色仍以現場色卡為準。
+          </p>
+        </aside>
+      </section>
+    </main>
+
+    <a class="floating-line" href="https://lin.ee/sUGMmXs" target="_blank" rel="noreferrer" aria-label="LINE 聯絡 E Boost Studio">LINE</a>
+    <script src="data/wrap-colors.js?v=20260720-phase1"></script>
+    <script src="data/ai-config.js?v=20260720-ai-commercial"></script>
+    <script src="wrap-simulator.js?v=20260720-phase1"></script>
+  </body>
+</html>
